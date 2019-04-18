@@ -8,9 +8,10 @@ By [Coffreo](https://coffreo.biz)
 #### Javascript translations extractor for [`willdurand/js-translation-bundle`](https://github.com/willdurand/BazingaJsTranslationBundle)
 
 This package is a small project existing to store in one place wonderfuls regexps to properly export translations 
-strings & metas from javascript source files. It can be used standalone, but it's main goal is to be used in 
-[`coffreo/jms-translation-js-extractor-bundle`](https://github.com/Coffreo/jms-translation-js-extractor-bundle) and 
-[`coffreo/php-translation-js-extractor-bundle`](https://github.com/Coffreo/php-translation-js-extractor-bundle)
+strings & metas from javascript source files.  
+It can be used standalone, but it's main goal is to be used in :
+* [`coffreo/jms-translation-js-extractor-bundle`](https://github.com/Coffreo/jms-translation-js-extractor-bundle)
+* [`coffreo/php-translation-js-extractor-bundle`](https://github.com/Coffreo/php-translation-js-extractor-bundle)
 
 ## Installation
 
