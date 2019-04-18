@@ -2,8 +2,8 @@
 
 By [Coffreo](https://coffreo.biz)
 
-[![Build Status](https://travis-ci.com/Coffreo/js-translation-extractor.svg?branch=master)](https://travis-ci.com/Coffreo/js-translation-extractor)
-
+[![Build Status](https://travis-ci.org/Coffreo/js-translation-extractor.svg?branch=master)](https://travis-ci.com/Coffreo/js-translation-extractor)
+[![codecov](https://codecov.io/gh/Coffreo/js-translation-extractor/branch/master/graph/badge.svg)](https://codecov.io/gh/Coffreo/js-translation-extractor)
 
 #### Javascript translations extractor for [`willdurand/js-translation-bundle`](https://github.com/willdurand/BazingaJsTranslationBundle)
 
