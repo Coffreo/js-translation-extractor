@@ -7,8 +7,8 @@ cs:
 	vendor/bin/php-cs-fixer fix --verbose --diff
 
 test:
-	vendor/bin/simple-phpunit --coverage-html=build/coverage
+	vendor/bin/simple-phpunit --coverage-text --coverage-html=build/coverage
 
 test-ci:
-	vendor/bin/simple-phpunit --coverage-text --coverage-clover=build/coverage.xml
+	vendor/bin/simple-phpunit --coverage-clover=build/coverage.xml
 	vendor/bin/php-cs-fixer fix --dry-run

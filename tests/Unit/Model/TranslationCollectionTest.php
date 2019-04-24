@@ -10,7 +10,7 @@
  */
 
 use Coffreo\JsTranslationExtractor\Model\TranslationCollection;
-use Coffreo\JsTranslationExtractor\Model\TranslationLocation;
+use Coffreo\JsTranslationExtractor\Model\TranslationString;
 use PHPUnit\Framework\TestCase;
 
 /**
@@ -29,13 +29,13 @@ class TranslationCollectionTest extends TestCase
         $this->assertCount(0, $collection->getIterator());
     }
 
-    public function testAddLocation()
+    public function testAddTranslation()
     {
-        $location = new TranslationLocation('message', 42);
+        $translation = new TranslationString('message', 42);
         $collection = new TranslationCollection();
-        $collection->addLocation($location);
-        $this->assertEquals($location, $collection->first());
-        $this->assertEquals($location, $collection->get(0));
+        $collection->addTranslation($translation);
+        $this->assertEquals($translation, $collection->first());
+        $this->assertEquals($translation, $collection->get(0));
         $this->assertCount(1, $collection->getIterator());
         $this->assertEquals(1, $collection->count());
     }

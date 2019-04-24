@@ -14,7 +14,7 @@ namespace Coffreo\JsTranslationExtractor\Model;
 /**
  * @author Tobias Nyholm <tobias.nyholm@gmail.com>
  */
-final class TranslationLocation
+final class TranslationString
 {
     /**
      * Translation key.

@@ -13,7 +13,7 @@ namespace Translation\Extractor\Tests\Functional;
 
 use Coffreo\JsTranslationExtractor\Extractor\JsTranslationExtractor;
 use Coffreo\JsTranslationExtractor\Model\TranslationCollection;
-use Coffreo\JsTranslationExtractor\Model\TranslationLocation;
+use Coffreo\JsTranslationExtractor\Model\TranslationString;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Finder\Finder;
 
@@ -27,7 +27,7 @@ final class JsTest extends TestCase
     public function testExtractTrans()
     {
         $path = 'Js/trans.js';
-        $collection = $this->getTranslationLocations($path);
+        $collection = $this->getTranslationStrings($path);
 
         $this->assertValidExtraction($path, $collection->first(), 'arg-key', [], 1);
         $this->assertValidExtraction($path, $collection->get(1), 'arg-key-params', [], 2);
@@ -42,7 +42,7 @@ final class JsTest extends TestCase
     public function testExtractTransChoice()
     {
         $path = 'Js/transChoice.js';
-        $collection = $this->getTranslationLocations($path);
+        $collection = $this->getTranslationStrings($path);
 
         $this->assertValidExtraction($path, $collection->first(), 'arg-key', [], 1);
         $this->assertValidExtraction($path, $collection->get(1), 'arg-key-params', [], 2);
@@ -57,7 +57,7 @@ final class JsTest extends TestCase
     public function testExtractTransReact()
     {
         $path = 'Js/trans-react.jsx';
-        $collection = $this->getTranslationLocations($path);
+        $collection = $this->getTranslationStrings($path);
 
         $this->assertValidExtraction($path, $collection->first(), 'arg-key', [], 7);
         $this->assertValidExtraction($path, $collection->get(1), 'arg-key-params', [], 8);
@@ -69,7 +69,7 @@ final class JsTest extends TestCase
         $this->assertCount(6, $collection);
     }
 
-    protected function assertValidExtraction($file, TranslationLocation $translation, $message, $context, $line)
+    protected function assertValidExtraction($file, TranslationString $translation, $message, $context, $line)
     {
         $this->assertNotNull($translation, "No translation extracted ($file:$line)");
         $this->assertEquals($message, $translation->getMessage(), "Invalid message extracted ($file:$line)");
@@ -77,7 +77,7 @@ final class JsTest extends TestCase
         $this->assertEquals($line, $translation->getLine(), "Invalid line number extracted ($file:$line)");
     }
 
-    private function getTranslationLocations($relativePath)
+    private function getTranslationStrings($relativePath)
     {
         $extractor = new JsTranslationExtractor();
 
