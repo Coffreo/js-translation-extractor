@@ -12,7 +12,7 @@
 namespace Coffreo\JsTranslationExtractor\Extractor;
 
 use Coffreo\JsTranslationExtractor\Model\TranslationCollection;
-use Coffreo\JsTranslationExtractor\Model\TranslationLocation;
+use Coffreo\JsTranslationExtractor\Model\TranslationString;
 
 /**
  * @author  Cyril MERY <cmery@coffreo.com>
@@ -49,7 +49,7 @@ class JsTranslationExtractor implements JsTranslationExtractorInterface
                 $message = $this->cleanQuotedString($keyInfo[0]);
                 $quotedDomain = empty($matches[4][$i]) ? null : $matches[4][$i][0];
                 $context = $quotedDomain ? ['domain' => $this->cleanQuotedString($quotedDomain)] : [];
-                $collection->addLocation(new TranslationLocation($message, $line, $context));
+                $collection->addTranslation(new TranslationString($message, $line, $context));
             }
         }
     }
@@ -70,7 +70,7 @@ class JsTranslationExtractor implements JsTranslationExtractorInterface
                 $message = $this->cleanQuotedString($keyInfo[0]);
                 $quotedDomain = empty($matches[7][$i]) ? null : $matches[7][$i][0];
                 $context = $quotedDomain ? ['domain' => $this->cleanQuotedString($quotedDomain)] : [];
-                $collection->addLocation(new TranslationLocation($message, $line, $context));
+                $collection->addTranslation(new TranslationString($message, $line, $context));
             }
         }
     }

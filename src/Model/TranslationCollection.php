@@ -17,51 +17,51 @@ namespace Coffreo\JsTranslationExtractor\Model;
 final class TranslationCollection implements \Countable, \IteratorAggregate
 {
     /**
-     * @var TranslationLocation[]
+     * @var TranslationString[]
      */
-    private $translationLocations = [];
+    private $translationStrings = [];
 
     public function getIterator()
     {
-        return new \ArrayIterator($this->translationLocations);
+        return new \ArrayIterator($this->translationStrings);
     }
 
     public function count()
     {
-        return count($this->translationLocations);
+        return count($this->translationStrings);
     }
 
     /**
-     * @param TranslationLocation $location
+     * @param TranslationString $translation
      */
-    public function addLocation(TranslationLocation $location)
+    public function addTranslation(TranslationString $translation)
     {
-        $this->translationLocations[] = $location;
+        $this->translationStrings[] = $translation;
     }
 
     /**
-     * @return TranslationLocation|null
+     * @return TranslationString|null
      */
     public function first()
     {
-        if (empty($this->translationLocations)) {
+        if (empty($this->translationStrings)) {
             return;
         }
 
-        return reset($this->translationLocations);
+        return reset($this->translationStrings);
     }
 
     /**
      * @param $key
      *
-     * @return TranslationLocation|null
+     * @return TranslationString|null
      */
     public function get($key)
     {
-        if (!isset($this->translationLocations[$key])) {
+        if (!isset($this->translationStrings[$key])) {
             return;
         }
 
-        return $this->translationLocations[$key];
+        return $this->translationStrings[$key];
     }
 }
